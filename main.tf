@@ -41,14 +41,14 @@ terraform {
 }
 
 provider "aws" {
-  region     = "ap-northeast-1"
+  region     = "us-east-2"
 }
 resource "aws_instance" "myec2" {
-  ami                    = "ami-0b828c1c5ac3f13ee"
+  ami                    = "ami-024e6efaf93d85776"
   instance_type          = "t2.micro"
-  availability_zone = "ap-northeast-1a"
+  availability_zone = "us-east-2a"
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
-  key_name = "Jen"
+  key_name = "insurance_ohio"
   tags = {
     Name = "test-server"
   }
@@ -59,5 +59,5 @@ resource "aws_instance" "myec2" {
 }
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0M5dm8dWE4Cd37s0i7kbAjYw3Rf/gDMNhzrLXhH+MyQJUcCrDSLHnGg8GDz/AdVcYuPAoCBxAGWJkLhqpn4C/i+9xiuCmQAh4CeA76fBtjACWiwXb/O71bm4/KSWkhzFOmffJs5vmvMD/GFUPSZdLkwa9hPxTAG1WFKNrw2eIUzHI3hbace/FYidVTglo1ls6y/mKYwA2QXlNBEkQCzRSUo+rQblnNG36hQhmLYHEEWFDdK/OE2KfhkL9coNf1mcrccWXtND48F9dqVPW8LKfJ19ZMEwGeMiprNHjVSmzPzJQuLsORART/G02nhDu96TOtGMaZjEua5p8QPzS8HWv"
+  public_key = "ssh-rsa MIIEpAIBAAKCAQEAmcOhKoKFgIDJYaXkdwr3pvg0ePbB4rjsiivRIQmolgXAbQSsCwysa6bx1Je/BcIuf98SIDypSnZ6Q5z1lI0VyE+YIiFKf0nJbPk+Ao4wXrsF+K0Edwyfhob1AKXc/DkH+aKKr6lGOjCZWn0qoWMkzG+mNYigjKagM5Gn6TuAZH1GhD73gqdv3PQZVefAxwgplbLby7JGWhLGOtyMPTf3CVWkXDXw3OONfP/xkKpOncrHfR4TRG+p6YBR895HX+zWa3HXzCL0/uNTcf6GiDVP9PTB1NpSHKHiq0yPfAYIYs1R6q+trZIx0YGWA6d0+zx+8476gTXkDpZU+YFzbwvtMQIDAQABAoIBAQCAGLa6GFQpkqCx5abn+U4JXnswTrmFLHN6RDiLomU83fvJlnvRFLTLVh/e8K/llzhvtKGAE6kg7IS8sRTxtXtxDcX6oOtUEV9pllYvgM8RDBNUcKbomq6HPwT6jjMEOGrJb7zDzGxB69zFwsJyAotUeKrprDG8GtAZRf2xUq2KiHss4HVNpYGPxsSTfsqnCxYuqYfJz19edAIrC5xiKP86d1HM7IWldBJGQWoA5red12GIsklsd/vP3Z7zETO/2jl1t1yjSSmcIimEFURMvVjnOC3llWnKzRFuvfgtklhM9gjznzCrLbtUecLUOR/azdfDcDlV+QFM5m8X1uIr4DwxAoGBANe1+cgL/EMNpvmRnqS8mFX3IYryvVXP15uCICLG4GmcGXlr7lCTxvxPlauxPYRbC5UxwMr8gK0xyyWBKJ1hwgcUwbELynFvWmYkBCiNSSsjnJG1PbqtYGMkXdKyKjX6QcE5dFZIqv4285ubtbrupKsfmsMTTAdX0YZsijwedZfNAoGBALZ7uoFuBL3RQ63SC7jDbxp+S5b36reK4F0GH2btOP9rzpnUek97WsCqQjR+hBsGQpGAj5H8q4k3cgi6v8wwUeGOJ2l1E2P+XOLA4DmE7FVCxfkwfYMBCNO1NJkIeMnHhG8NEWcI26yCwz9Ro6zHqbaELB+UptGnPFYcN2lqtj71AoGBAKANexdOpU9PauxUewS6lsF6S94gPBHW1KCjDZsgO1TBKTmptrr82zFND73EFeQF9fMuZmF2tzdK8fOTAQK9jUzZvtnR6NUADXAqGxfHtVmX481NUE8Z46HMUv1Jiv5gALgRHFwFMTLMrTZxc4cPGQmLurYxtEDijSmTkYIIC7KlAoGAQiZV9Ic6RsjuHLuQrjiCNPtlUWOrfT9ll7MZfQkvaT/eU9s3P0q7Gi5d84ONRfKd/Pq6kLQkRoiH2OxBjLZTaE1MsijTj6LsbvJ2FcO+nCWpeGyAgxXD6mK8n2D30EV4F32IOm52m3GHb5Obno1+UwBUsloDoupZr+lomNkrGWUCgYAzCTe19vBS79XVMAoTP+5UmuyLNNf0DpZ3qxHVKYqyrIPts7+rVX3XKZFV4QjdvV7zBl1twNvTMsbWjWhVRxnRA5iUo0k1XB6HEoMvuQDQpUeiKlq9hjEcChjs0AXLE6fjDki+Nvwd6MI0abmdPc04DuUrbAe6ZtzCuM8ekcf1kA=="
 }
