@@ -43,7 +43,7 @@ terraform {
 provider "aws" {
   region     = "us-east-2"
 }
-resource "aws_instance" "myec2" {
+resource "aws_instance" "myins" {
   ami                    = "ami-024e6efaf93d85776"
   instance_type          = "t2.micro"
   availability_zone = "us-east-2a"
@@ -54,7 +54,7 @@ resource "aws_instance" "myec2" {
   }
 
   provisioner "local-exec" {
-    command = "echo ${aws_instance.myec2.public_ip} > /etc/ansible/hosts"
+    command = "echo ${aws_instance.myins.public_ip} > /etc/ansible/hosts"
   }
 }
 resource "aws_key_pair" "deployer" {
